@@ -1,55 +1,48 @@
-<html><head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="stylesheet.css" rel="stylesheet" type="text/css">
-  </head><body>
+<html><head></head><body><div id="fb-root"></div>
     <script>
       window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1294109000601718',
-          xfbml      : true,
-          version    : 'v2.7'
-        });
-      };
-    
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
+                FB.init({
+                appId: '1294109000601718',
+                status: true,
+                cookie: true,
+                xfbml: true
+            });
+        };
+
+        // Load the SDK asynchronously
+        (function(d){
+        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement('script'); js.id = id; js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+        ref.parentNode.insertBefore(js, ref);
+        }(document));
+
+        function login() {
+            FB.login(function(response) {
+
+            // handle the response
+            console.log("Response goes here!");
+
+            }, {scope: 'read_stream,publish_stream,publish_actions,read_friendlists'});            
+        }
+
+        function logout() {
+            FB.logout(function(response) {
+              // user is now logged out
+            });
+        }
+
+        var status = FB.getLoginStatus();
+
+        console.log(status);
     </script>
-    <div class="cover" style="opacity: 0.5;">
-      <div class="navbar navbar-default">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="mission.html">Our Mission</a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active">
-                <a href="#"><b>Sign Up/ Login with Facebook</b></a>
-              </li>
-              <li>
-                <a href="#">Events</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="cover-image" style="background-image : url('http://pingendo.github.io/pingendo-bootstrap/assets/blurry/800x600/13.jpg')"></div>
-    </div>
-    
+
+  
+   
+    <button onclick="javascript:login();">Login Facebook</button>
+    <br>
+    <button onclick="javascript:logout();">Logout from Facebook</button>
   
 
-</body></html>
+ </body></html>
