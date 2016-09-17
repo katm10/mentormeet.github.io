@@ -6,6 +6,23 @@
     <link href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="stylesheet.css" rel="stylesheet" type="text/css">
   </head><body>
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1294109000601718',
+          xfbml      : true,
+          version    : 'v2.7'
+        });
+      };
+    
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+    </script>
     <div class="cover">
       <div class="navbar navbar-default">
         <div class="container">
@@ -31,6 +48,15 @@
         </div>
       </div>
       <div class="cover-image" style="background-image : url('http://pingendo.github.io/pingendo-bootstrap/assets/blurry/800x600/13.jpg')"></div>
+    </div>
+    <div class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">              <div class="fb-like" data-share="true" data-width="450" data-show-faces="true">
+</div>
+          </div>
+        </div>
+      </div>
     </div>
   
 
