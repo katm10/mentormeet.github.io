@@ -7,46 +7,46 @@
     <script src="//connect.facebook.net/en_US/all.js"></script>
     <script>
       window.fbAsyncInit = function() {
-                FB.init({
-                appId: '1294109000601718',
-                status: true,
-                cookie: true,
-                xfbml: true
-            });
-        };
-
-        // Load the SDK asynchronously
-        (function(d){
-        var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-        if (d.getElementById(id)) {return;}
-        js = d.createElement('script'); js.id = id; js.async = true;
-        js.src = "//connect.facebook.net/en_US/all.js";
-        ref.parentNode.insertBefore(js, ref);
-        }(document));
-
-        function login() {
-            FB.login(function(response) {
-
-            // handle the response
-            
-
-            }, {scope: 'public_profile, email'});
-
-
-            window.location.href = "https://katm10.github.io/mentormeet.github.io/main.html";
-            
-          
-        }
-
-        function logout() {
-            FB.logout(function(response) {
-              // user is now logged out
-            });
-        }
-
-        var status = FB.getLoginStatus();
-
-        console.log(status);
+                        FB.init({
+                        appId: '1294109000601718',
+                        status: true,
+                        cookie: true,
+                        xfbml: true
+                    });
+                };
+        
+                // Load the SDK asynchronously
+                (function(d){
+                var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+                if (d.getElementById(id)) {return;}
+                js = d.createElement('script'); js.id = id; js.async = true;
+                js.src = "//connect.facebook.net/en_US/all.js";
+                ref.parentNode.insertBefore(js, ref);
+                }(document));
+        
+                function login() {
+                    FB.login(function(response) {
+        
+                    // handle the response
+                    
+        
+                    }, {scope: 'public_profile, email'});
+        
+        
+                    window.location.href = "https://katm10.github.io/mentormeet.github.io/main.html";
+                    
+                  
+                }
+        
+                function logout() {
+                    FB.logout(function(response) {
+                      // user is now logged out
+                    });
+                }
+        
+                var status = FB.getLoginStatus();
+        
+                console.log(status);
     </script>
   </head><body>
     <div class="cover">
@@ -60,7 +60,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="mission.html">Our Mission</a>
+            <ul class="navbar-brand" href="mission.html">Our Mission</ul>
           </div>
           <div class="collapse navbar-collapse" id="navbar-ex-collapse">
             <ul class="nav navbar-nav navbar-right">
@@ -68,7 +68,10 @@
                 <a href="facebook.html">Sign Up/ Login with Facebook</a>
               </li>
               <li>
-                <a href="#">Events</a>
+                <a href="events.html">Events</a>
+              </li>
+               <li>
+                <a href="index.html">Home</a>
               </li>
             </ul>
           </div>
