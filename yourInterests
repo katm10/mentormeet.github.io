@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		
+		
+
+	<style>
+		button{
+			border-radius: 8px;
+			font-size: 16px;
+		}
+
+	</style> 
+	</head>
+
+
+	<body>
+		<button>Languages (drop down)</button>
+		<br>
+		<button id = "Python">Python</button>
+		<button id = "Java Script">Java Script</button>
+		<button id = "C++">C++</button>
+		<button id = "HTML">HTML</button>
+		<br>
+		<br>
+		<button>Companies (drop down)</button>
+		<br>
+		<button id = "Twitter">Twitter</button>
+		<button id = "MuleSoft">MuleSoft</button>
+		<button id = "Dolby">Dolby</button>
+		<br>
+		<br>
+		<button>Buisness (drop down)</button>
+		<br>
+		<button id = "Pitching">Pitching</button>
+		<button id = "Managing">Managing</button>
+		<button id = "Venture Capitalist">Venture Capitalist</button>
+		<button id = "Sales">Sales</button>
+		<br>
+		<br>
+		<button>Buisness (drop down)</button>
+		<br>
+		<button id = "Front End">Front End</button>
+		<button id = "Back End">Back End</button>
+		<button id = "Full Stack">Full Stack</button>
+		<p>Your Interests: </p>
+ 		<ul></ul>
+
+		<script>
+			$( document ).ready(function() {
+
+			var showList = function(){
+				for (var i = 0;  i < yourInterest.length; i++){
+					$( "ul" ).append("<li>" + yourInterest[i] + "</li>")
+				}
+			}
+
+			var yourInterest = [];
+
+			// var myFunction(text) = function() 
+			// { 
+			// 	yourInterest.push($("#Python").text())
+			// }
+			//    $("#Python").onclick(myFunction)
+			// }
+
+			$( "button" ).click(function() {
+				yourInterest.push($(this).text())
+				showList()
+				yourInterest.pop()
+			})
+
+
+			});
+		</script>
+
+
+	</body>
+
+</html>
