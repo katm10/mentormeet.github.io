@@ -28,11 +28,11 @@
             FB.login(function(response) {
 
             // handle the response
-            console.log("Response goes here!");
+            console.log(FB.getLoginStatus);
 
             }, {scope: 'public_profile, email'});
           if(FB.getLoginStatus == "connected"){
-            window.location.href = "main.html";
+            window.location.href = "https://katm10.github.io/mentormeet.github.io/main.html";
             
           }
         }
